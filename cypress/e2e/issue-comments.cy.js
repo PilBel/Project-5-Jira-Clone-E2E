@@ -10,7 +10,7 @@ describe('Issue comments creating, editing and deleting', () => {
     const getIssueDetailsModal = () => cy.get('[data-testid="modal:issue-details"]');
 
     it('Should create a comment successfully', () => {
-        const comment = 'TEST_COMMENT';
+        const comment = 'This test should create a comment succesfully';
 
         getIssueDetailsModal().within(() => {
             cy.contains('Add a comment...')
@@ -27,9 +27,9 @@ describe('Issue comments creating, editing and deleting', () => {
         });
     });
 
-    it.only('Should create,edit and delete comment successfully', () => {
-        const comment = 'TEST_COMMENT';
-        const comment_edited = 'TEST_COMMENT_EDITED';
+    it('Should create,edit and delete comment successfully', () => {
+        const comment = 'This test should create a comment succesfully';
+        const comment_edited = 'This test should create, edit and delete a comment succesfully';
 
         getIssueDetailsModal().within(() => {
             //add comment
@@ -59,8 +59,8 @@ describe('Issue comments creating, editing and deleting', () => {
     });
 
     it('Should edit a comment successfully', () => {
-        const previousComment = 'An old silent pond...';
-        const comment = 'TEST_COMMENT_EDITED';
+        const previousComment = 'This test should create a comment succesfully';
+        const comment = 'This test should edit a comment succesfully';
 
         getIssueDetailsModal().within(() => {
             cy.get('[data-testid="issue-comment"]')
