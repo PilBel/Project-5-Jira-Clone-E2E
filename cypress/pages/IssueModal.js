@@ -14,6 +14,7 @@ class IssueModal {
         this.cancelDeletionButtonName = "Cancel";
         this.confirmationPopup = '[data-testid="modal:confirm"]';
         this.closeDetailModalButton = '[data-testid="icon:close"]';
+        this.openTimeTracking 
     }
 
     getIssueModal() {
@@ -26,10 +27,12 @@ class IssueModal {
 
     selectIssueType(issueType) {
         cy.get(this.issueType).click('bottomRight');
-        cy.get(`[data-testid="select-option:${issueType}"]`)
-            .trigger('mouseover')
-            .trigger('click');
+        cy.get('[data-testid="select-option:Story"]').trigger('click');
+        //cy.get(`[data-testid="select:issueType-option:${issueType}"]`)
+        //    .trigger('mouseover')
+        //    .trigger('click');
     }
+
 
     selectAssignee(assigneeName) {
         cy.get(this.assignee).click('bottomRight');
